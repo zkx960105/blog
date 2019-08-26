@@ -1,0 +1,22 @@
+{%extends 'layout.html'%}
+{%block content%}
+    <div class="view">
+        <h1>{{content.title}}</h1>
+        <main>{{content.content}}</main>
+    </div>
+    <div class="comment">
+        {%if userInfo._id%}
+        <input type="text" id="commentText">
+        <input type="hidden" id="contentId" value="{{content.id}}">
+        <button id="subBtn">提交</button>
+        {%else%}
+        <p>您还没有登录，请登录</p>
+        {%endif%}
+    </div>
+    <div class="msgList" id="msgList">
+        {% for content in content.comments %}
+        <div class="msgHtml"><p class="msgName">{{content.username.toString()}}</p><p class="msgCon">{{content.content.toString()}}</p></div>
+        {% endfor %}
+    </div>
+    <script src="/public/js/comment.js"></script>
+{%endblock%}

@@ -1,0 +1,7 @@
+<div>
+    <ul class="pages">
+        <li><a href="/admin/user?page={{(page-1)>0 && page-1 || 1}}">上一页</a></li>
+        <li>当前第{{page}}页,一共{{pages}}页</li>
+        <li><a href="/admin/user?page={{(page+1)<pages || pages}}">下一页</a></li>
+    </ul>
+</div>

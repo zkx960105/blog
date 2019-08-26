@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block main %}
+<div class="table contentTable">
+    <h3>内容页</h3>
+    <ul>
+        <li>id</li>
+        <li>分类</li>
+        <li>作者</li>
+        <li>时间</li>
+        <li>点击量</li>
+        <li>操作</li>
+    </ul>
+    
+    <ul class="usermsg">
+            {% for content in contents %}
+            <li>{{content._id.toString()}}</li>
+                <li>{{content.title}}</li>
+                <li>{{content.user.username}}</li>
+                <li>{{content.addTime|date('Y-m-d')}}</li>
+                <li>{{content.views}}</li>
+                <li>
+                    <a href="/admin/content/edit?id={{content._id.toString()}}">修改</a> | <a href="/admin/content/delete?id={{content._id.toString()}}">删除</a>
+                </li>
+        
+        {% endfor %}
+    </ul>
+    
+</div>
+<div>
+        <ul class="pages">
+            <li><a href="/admin/content?page={{(page-1)>0 && page-1 || 1}}">上一页</a></li>
+            <li>当前第{{page}}页,一共{{pages}}页</li>
+            <li><a href="/admin/content?page={{(page+1)<pages || pages}}">下一页</a></li>
+        </ul>
+    </div>
+{% endblock%}

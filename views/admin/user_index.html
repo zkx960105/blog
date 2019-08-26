@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block main %}
+<div class="table">
+    <h3>用户管理</h3>
+    <ul>
+        <li>id</li>
+        <li>用户名</li>
+        <li>密码</li>
+        <li>是否为管理员</li>
+    </ul>
+    
+    <ul class="usermsg">
+        {% for user in users %}
+            <li>{{user._id.toString()}}</li>
+                <li>{{user.username}}</li>
+                <li>{{user.password}}</li>
+                <li>
+                    {% if user.isAdmin %}是{% endif %}
+                </li>
+        
+        {% endfor %}
+    </ul>
+    
+</div>
+{% include 'page.html' %}
+{% endblock%}

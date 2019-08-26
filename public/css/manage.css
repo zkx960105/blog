@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.clear{
+    clear: both;
+}
+.header{
+    background-color: skyblue;
+    height: 50px;
+    padding-left: 50px;
+    color: #ffffff;
+}
+.header p{
+    line-height: 50px;
+}
+.header a{
+    margin-left: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.lgout{
+    float: right;
+    width: 100px;
+    text-align: center;
+}
+.wel{
+    float: right;
+}
+.wel-block{
+    width: 95%;
+    margin: 20px auto 0;
+    background-color: skyblue;
+    border-radius: 5px;
+    padding:30px 0 40px 50px;
+}
+.wel-block h2{
+    margin-top: 20px;
+}
+.table{
+    width: 97%;
+    margin: 0 auto;
+    background-color: skyblue;
+    padding:10px 10px 10px 10px;
+    color: #ffffff;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #57faff;
+}
+.table ul{
+    font-size: 0;
+}
+.table ul li{
+    display: inline-block;
+    width: 25%;
+    line-height: 50px;
+    list-style: none;
+    font-size: 20px;
+}
+.bolgTable ul li{
+    width: 33.333%!important;
+}
+.contentTable ul li{
+    width: 16.666%!important;
+}
+.table .usermsg{
+    font-size: 0;
+}
+.table .usermsg li{
+    width: 25%;
+    font-size: 20px;
+}
+.bolgTable .usermsg li{
+    width: 33.333%;
+}
+.pages{
+    display: block;
+    margin: 20px auto 0;
+    text-align: center;
+}
+.pages li{
+    display: inline-block;
+    color: #5fbfff;
+}
+.pages li a{
+    text-decoration: none;
+    color: skyblue;
+}
+.addName{
+    margin-top: 5px;
+}
+.addName input{
+    outline: 0;
+    border: 0;
+    width: 300px;
+    border-radius: 5px;
+    height: 30px;
+}
+.addName button{
+    height: 30px;
+    background-color: #5fbfff;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #5fbfff;
+    box-shadow: 1px 1px 5px #57faff;
+    color: #ffffff;
+}

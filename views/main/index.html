@@ -1,0 +1,33 @@
+{%extends 'layout.html'%}
+{%block content%}
+{% for content in contents %}
+            <div class="viewList">
+                <h1>{{content.title}}</h1>
+                <p>{{content.description}}</p>
+                <a href="/view?contentid={{content.id}}" class="read">阅读全文</a>
+            </div>
+            {% endfor %}
+            <ul class="pageList">
+                <li>
+                    {% if page <= 1 %}
+                    <a href="javascript:;">没有上一页</a>
+                    {% else %}
+                    <a href="/?category={{category}}&page={{page-1}}">上一页</a>
+                    {% endif %}
+                </li>
+                <li>
+                    {% if page >0%}
+                    {{page}}/{{pages}}
+                    {% else %}
+                    1/1
+                    {% endif %}
+                </li>
+                <li>
+                    {% if page >= pages %}
+                    <a href="javascript:;">没有下一页了</a>
+                    {% else %}
+                    <a href="?category={{category}}&page={{page+1}}">下一页</a>
+                    {% endif %}
+                </li>
+            </ul>
+{%endblock%}

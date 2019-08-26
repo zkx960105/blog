@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Manage</title>
+    <link rel="stylesheet" href="/public/css/manage.css">
+</head>
+<body>
+    <div class="header">
+        <p>后台管理系统<span><a href="/admin">首页</a><a href="/admin/user">用户管理</a><a href="/admin/category">分类管理</a></span><span><a href="/admin/category/add">添加分类</a></span><span><a href="/admin/content">内容管理</a></span><span><a href="/admin/content">添加内容</a></span><span class="lgout">退出</span><span class="wel">欢迎,&nbsp;{{userInfo.username}}</span></p>
+        <div class="clear"></div>
+    </div>
+    {% block main %}{% endblock%}
+    <script src="/public/js/admin.js"></script>
+</body>
+</html>

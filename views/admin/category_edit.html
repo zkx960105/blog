@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block main %}
+<div class="table">
+    <h3>分类编辑 - {{category.name}}</h3>
+    <form action="" method="POST">
+    <div class="addName">
+        <label for="name">分类名称：</label>
+        <input type="text" id="name" placeholder="请输入分类名称" name="name" value="{{category.name}}">
+        <button type="submit" id="submit">提交</button>
+    </div>
+</form>
+</div>
+{% endblock%}

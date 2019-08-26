@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/index.css">
+    <script src="/public/js/index.js"></script>
+</head>
+<body>
+        <header>
+                <div class="banner">
+                    <img src="/public/images/timg.jpg" alt="">
+                </div>
+                <div class="mean">
+                    {%if category == ''%}
+                    <a href="/" class="active">首页</a>
+                    {%else%}
+                    <a href="/">首页</a>
+                    {%endif%}
+                    
+                    {% for categories in categories %}
+                    {%if category ==categories.id%}
+                    <a href="/?category={{categories.id}}" class="active">{{categories.name.toString()}}</a>
+                    {%else%}
+                    <a href="/?category={{categories.id}}">{{categories.name.toString()}}</a>
+                    {%endif%}
+                    {% endfor %}
+                </div>
+            </header>
+            <div class="box">
+        
+            
+            <div class="content">
+                <div class="blog-left">
+                   {%block content%}{%endblock%}
+                </div>
+                <div class="blog-right">
+                    {% if userInfo._id %}
+                    <div class="userinfo" id="userinfo">
+                        <p>用户信息</p>
+                        <p class="username" id="adminName">{{userInfo.username}}</p>
+                        {% if userInfo.isAdmin %}
+                        <p id="thx">您好！管理员<a href="/admin">进入管理</a></p>
+                        {% else %}
+                        <p id="thx">welcome my Blog "≡ (^(OO)^) ≡"</p>
+                        {% endif %}
+                        <p><a href="javascript:;" id="lgout">退出</a></p>
+                    </div>
+                    {% else %}
+                    <div class="login" id="loginbox">
+                        <p class="tle">登录</p>
+                        <div>
+                            <label for="username">用户名</label>
+                            <input type="text" id="username" name="username">
+                        </div>
+                        <div>
+                            <label for="password">密码</label>
+                            <input type="text" id="password" name="password">
+                        </div>
+                        <button class="gotoBtn">登录</button>
+                        <p class="tip">还没注册?<a href="javascript:;">马上注册</a></p>
+                        <p id="loginWarning"></p>
+                    </div>
+                    <div class="register" id="registerbox">
+                        <p class="tle">注册</p>
+                        <div>
+                            <label for="psusername">用户名</label>
+                            <input type="text" id="psusername" name="psusername">
+                        </div>
+                        <div>
+                            <label for="pspassword">密码</label>
+                            <input type="text" id="pspassword" name="pspassword">
+                        </div>
+                        <div>
+                            <label for="checkps">确认密码</label>
+                            <input type="text" id="checkps" name="checkps">
+                        </div>
+                        <button class="gotoBtn">注册</button>
+                        <p class="tip">已有账号?<a href="javascript:;">马上登录</a></p>
+                        <p id="warning"></p>
+                    </div>
+                    {% endif %}
+                </div>
+        <div class="clear"></div>
+            </div>
+        </div>
+</body>
+</html>
